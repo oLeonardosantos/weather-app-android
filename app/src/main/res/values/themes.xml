@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.WeatherApp" parent="Theme.Material3.Light.NoActionBar">
 
-        <item name="colorPrimary">@color/blueSky</item>
+        <item name="colorPrimary">#18282D</item>
     </style>
 
     <style name="Theme.WeatherApp" parent="Base.Theme.WeatherApp" />

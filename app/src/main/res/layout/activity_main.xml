@@ -6,31 +6,152 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".main.MainActivity"
-    android:background="@color/blueSky">
+    android:background="#4F90A6">
 
     <TextView
+        android:id="@+id/country"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/city"
+        app:layout_constraintEnd_toStartOf="@+id/location"
+        app:layout_constraintStart_toStartOf="@+id/city"
+        tools:text="Brasil"
         android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"/>
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/city"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="Barretos"
-        android:textSize="26sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="60dp"/>
+
+    <ImageView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_location"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/city"
+        app:layout_constraintStart_toEndOf="@+id/city"
+        app:layout_constraintTop_toTopOf="@+id/city"/>
+
+    <TextView
+        android:id="@+id/state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="São Paulo"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/city"
+        app:layout_constraintStart_toStartOf="@+id/city"
+        app:layout_constraintTop_toBottomOf="@+id/city"
+        android:textSize="16dp"/>
+
+    <TextView
+        android:id="@+id/celsius"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="25"
+        app:layout_constraintTop_toBottomOf="@+id/state"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="100sp"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@color/yellow"/>
+
+    <TextView
+        android:id="@+id/valueCelsius"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="°c"
+        android:textColor="@color/yellow"
+        app:layout_constraintStart_toEndOf="@+id/celsius"
+        app:layout_constraintTop_toBottomOf="@+id/state"
+        android:layout_marginTop="22dp"
+        android:textSize="40sp"
+        android:fontFamily="sans-serif-light"/>
+
+    <TextView
+        android:id="@+id/skyCondition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Tempo Nublado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/celsius"
+        android:textSize="20sp"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/localtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="2024-05-89 15:23"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/skyCondition"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintTop_toBottomOf="@id/localtime"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/umidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Umidade:"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/image"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"/>
+
+    <TextView
+        android:id="@+id/umidityResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/umidity"
+        app:layout_constraintStart_toEndOf="@+id/umidity"
+        app:layout_constraintTop_toTopOf="@+id/umidity"
+        tools:text="37%" />
+
+    <TextView
+        android:id="@+id/cloud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Nuvem:"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/umidity"
+        app:layout_constraintTop_toBottomOf="@+id/umidity" />
+
+    <TextView
+        android:id="@+id/cloudResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cloud"
+        app:layout_constraintStart_toEndOf="@+id/cloud"
+        app:layout_constraintTop_toTopOf="@+id/cloud"
+        tools:text="34%" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
